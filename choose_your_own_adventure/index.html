@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose your own adventure</title>
+    <style>
+        body {
+            font-family: Georgia, Times, serif;
+            font-size: 18px;
+            line-height: 1.5;
+            margin: 20px;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        h1 {
+            color: #333333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #333333;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1>{{.Title}}</h1>
+{{range .Paragraphs}}
+<p>{{.}}</p>
+{{end}}
+<ul>
+    {{range .Options}}
+    <li><a href="/{{.Chapter}}">{{.Text}}</a></li>
+    {{end}}
+</ul>
+</body>
+</html>
